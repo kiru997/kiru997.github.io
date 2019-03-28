@@ -1,0 +1,21 @@
+<h1 style="text-align:center">Framework List</h1>
+<div class="offset-md-2 col-md-10" style="margin-top:20px">
+  <app-filter [listPageSize]="listPageSize" [search]="search" [pageSize]="pageSize" (onChangeFormState)="onChangeFormState()"
+    (onChangePageSize)="onChangePageSize($event)" (onSearch)="onSearch($event)" [pageSize]="pageSize">
+  </app-filter>
+</div>
+<div class="col-md-12" style="display: flex;margin-top:20px">
+  <div [class]="isFormOpen? 'col-md-8':'col-md-12'">
+    <app-list [ngClass]="{'table-responsive': true}" (onGetEdit)="onGetEdit($event)" (onDelete)="onDelete($event)" [data]="paginate.data"></app-list>
+  </div>
+  <div [class]="isFormOpen? 'col-md-4':'formhidden'">
+    <app-addform [framework]="framework" (onCloseForm)="onCloseForm()" (onSubmitForm)="onSubmitForm($event)"></app-addform>
+  </div>
+</div>
+<div [class]="isFormOpen? 'col-md-8':'col-md-12'" style="display:flex">
+  <app-paginate [paginate]="paginate" (onChangePageIndex)="onChangePageIndex($event)" style="margin:auto"></app-paginate>
+</div>
+
+
+<!--
+<router-outlet></router-outlet> -->

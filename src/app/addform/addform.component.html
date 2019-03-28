@@ -1,0 +1,32 @@
+<form [formGroup]="frameworkForm">
+  <input type="hidden" class="form-control" formControlName="id" id="id">
+  <div class="form-group row">
+    <label for="name" class="col-sm-3 col-form-label">Name</label>
+    <div class="col-sm-9">
+      <input type="text"
+        [class.error]="frameworkForm.get('name').invalid && (frameworkForm.get('name').dirty || frameworkForm.get('name').touched)"
+        class="form-control" formControlName="name" id="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="image" class="col-sm-3 col-form-label">Image</label>
+    <div class="col-sm-9">
+      <input type="text"
+        [class.error]="frameworkForm.get('image').invalid && (frameworkForm.get('image').dirty || frameworkForm.get('image').touched)"
+        class="form-control" formControlName="image" id="image" placeholder="Link">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="puslisher" class="col-sm-3 col-form-label">Puslisher</label>
+    <div class="col-sm-9">
+      <input type="text"
+        [class.error]="frameworkForm.get('puslisher').invalid && (frameworkForm.get('puslisher').dirty || frameworkForm.get('puslisher').touched)"
+        class="form-control" formControlName="puslisher" id="puslisher" placeholder="Puslisher">
+    </div>
+  </div>
+  <div class="form-group row" style="margin:auto">
+    <button type="submit" class="btn btn-success" (click)="onSubmitForm()"
+      [disabled]="!frameworkForm.valid">Save</button>&nbsp;
+    <button type="button" class="btn btn-dark" (click)="onCloseForm()">Close</button>
+  </div>
+</form>

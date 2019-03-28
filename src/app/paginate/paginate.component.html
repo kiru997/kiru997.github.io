@@ -1,0 +1,12 @@
+<nav aria-label="Page navigation example" *ngIf="paginate.totalPages>0">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="paginate.currentPage<=1"><a class="page-link" (click)="onChangePage(1)">First</a>
+    </li>
+    <li class="page-item" [class.disabled]="paginate.currentPage<=1"><a class="page-link" (click)="onChangePage(paginate.currentPage-1)" >Previous</a></li>
+    <li class="page-item" *ngFor="let item of paginateTempalte" [class.active]="item==paginate.currentPage"><a
+        class="page-link" (click)="onChangePage(item)">{{item}}</a></li>
+    <li class="page-item" [class.disabled]="paginate.currentPage>=paginate.totalPages"><a class="page-link" (click)="onChangePage(paginate.currentPage+1)">Next</a>
+    </li>
+    <li class="page-item" [class.disabled]="paginate.currentPage>=paginate.totalPages"><a class="page-link" (click)="onChangePage(paginate.totalPages)">Last</a></li>
+  </ul>
+</nav>

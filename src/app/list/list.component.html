@@ -1,0 +1,23 @@
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Index</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Publisher</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of data; index as i;let odd= odd" [class]="odd ? 'table-success' : 'table-danger'" >
+      <th  scope="row">{{i+1}}</th>
+      <td>{{item.name}}</td>
+      <td ><img style="height:70px;width:70px" [src]="item.image"></td>
+      <td>{{item.puslisher}}</td>
+      <td><button (click)="onGetEdit(item)" class="btn btn-primary">Edit</button>&nbsp;<button class="btn btn-danger" (click)="onDelete(item.id)">Delete</button></td>
+    </tr>
+
+  </tbody>
+</table>
+<app-modeldelete (onConfirmDelete)="onConfirmDelete($event)" class="modal" tabindex="-1" role="dialog" [style.display]="idDelete!=''?'block':'none'"></app-modeldelete>

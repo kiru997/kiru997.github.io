@@ -1,0 +1,15 @@
+<div class="row col-md-12" >
+  <div class="col-md-1 col-sm-1 col-2">
+    <button (click)="onChangeFormState()" class="btn btn-primary" role="button">Add</button>
+  </div>
+  <div class="col-md-4 col-sm-4 col-4" style="display:flex">
+    <label class="form-contro">PageSize</label>
+    &nbsp;
+    <select class="form-control" [ngModel]="pageSize" (ngModelChange)="onChangePageSize($event)">
+      <option *ngFor="let pageSize of listPageSize index as i" value="{{pageSize}}">{{pageSize}}</option>
+    </select>
+  </div>
+  <div class="col-md-7 col-sm-7 col-6">
+      <input type="text" [ngModel]="search" (ngModelChange)="onSearch($event)" placeholder="Search" class="form-control">
+    </div>
+</div>
