@@ -92,7 +92,7 @@ var AddformComponent = /** @class */ (function () {
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("framework"),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _model_model_framework__WEBPACK_IMPORTED_MODULE_3__["Framework"])
     ], AddformComponent.prototype, "framework", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])("onCloseForm"),
@@ -111,6 +111,43 @@ var AddformComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormBuilder"]])
     ], AddformComponent);
     return AddformComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/addform/addform.module.ts":
+/*!*******************************************!*\
+  !*** ./src/app/addform/addform.module.ts ***!
+  \*******************************************/
+/*! exports provided: AddformModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AddformModule", function() { return AddformModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _addform_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./addform.component */ "./src/app/addform/addform.component.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+
+
+
+
+
+var AddformModule = /** @class */ (function () {
+    function AddformModule() {
+    }
+    AddformModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_addform_component__WEBPACK_IMPORTED_MODULE_3__["AddformComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["ReactiveFormsModule"]],
+            exports: [_addform_component__WEBPACK_IMPORTED_MODULE_3__["AddformComponent"]]
+        })
+    ], AddformModule);
+    return AddformModule;
 }());
 
 
@@ -168,7 +205,7 @@ module.exports = ".formhidden{\r\n  visibility: hidden;\r\n}\r\n\r\n/*# sourceMa
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"offset-md-2 col-md-10\" style=\"margin-top:20px\">\n  <app-filter [listPageSize]=\"listPageSize\" (onChangeFormState)=\"onChangeFormState()\"\n    (onChangePageSize)=\"onChangePageSize($event)\" (onSearch)=\"onSearch($event)\" [pageSize]=\"pageSize\">\n  </app-filter>\n</div>\n<div class=\"col-md-12\" style=\"display: flex;margin-top:20px\">\n  <div [class]=\"isFormOpen? 'col-md-8':'col-md-12'\">\n    <app-list [ngClass]=\"{'table-responsive': true}\" (onGetEdit)=\"onGetEdit($event)\" (onDelete)=\"onDelete($event)\" [data]=\"paginate.data\"></app-list>\n  </div>\n  <div [class]=\"isFormOpen? 'col-md-4':'formhidden'\">\n    <app-addform [framework]=\"framework\" (onCloseForm)=\"onCloseForm()\" (onSubmitForm)=\"onSubmitForm($event)\"></app-addform>\n  </div>\n</div>\n<div [class]=\"isFormOpen? 'col-md-8':'col-md-12'\" style=\"display:flex\">\n  <app-paginate [paginate]=\"paginate\" (onChangePageIndex)=\"onChangePageIndex($event)\" style=\"margin:auto\"></app-paginate>\n</div>\n\n\n<!--\n<router-outlet></router-outlet> -->\n"
+module.exports = "<h1 style=\"text-align:center\">Framework List</h1>\n<div class=\"offset-md-2 col-md-10\" style=\"margin-top:20px\">\n  <app-filter [listPageSize]=\"listPageSize\" [search]=\"search\" [pageSize]=\"pageSize\" (onChangeFormState)=\"onChangeFormState()\"\n    (onChangePageSize)=\"onChangePageSize($event)\" (onSearch)=\"onSearch($event)\" [pageSize]=\"pageSize\">\n  </app-filter>\n</div>\n<div class=\"col-md-12\" style=\"display: flex;margin-top:20px\">\n  <div [class]=\"isFormOpen? 'col-md-8':'col-md-12'\">\n    <app-list [ngClass]=\"{'table-responsive': true}\" (onGetEdit)=\"onGetEdit($event)\" (onDelete)=\"onDelete($event)\" [data]=\"paginate.data\"></app-list>\n  </div>\n  <div [class]=\"isFormOpen? 'col-md-4':'formhidden'\">\n    <app-addform [framework]=\"framework\" (onCloseForm)=\"onCloseForm()\" (onSubmitForm)=\"onSubmitForm($event)\"></app-addform>\n  </div>\n</div>\n<div [class]=\"isFormOpen? 'col-md-8':'col-md-12'\" style=\"display:flex\">\n  <app-paginate [paginate]=\"paginate\" (onChangePageIndex)=\"onChangePageIndex($event)\" style=\"margin:auto\"></app-paginate>\n</div>\n\n\n<!--\n<router-outlet></router-outlet> -->\n"
 
 /***/ }),
 
@@ -186,6 +223,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _services_framework_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./services/framework.service */ "./src/app/services/framework.service.ts");
 /* harmony import */ var _model_model_framework__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./model/model.framework */ "./src/app/model/model.framework.ts");
+/* harmony import */ var _model_model_pagonate__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./model/model.pagonate */ "./src/app/model/model.pagonate.ts");
+
 
 
 
@@ -195,10 +234,10 @@ var AppComponent = /** @class */ (function () {
         this.frameworkService = frameworkService;
         this.isFormOpen = false;
         this.isEdit = false;
-        this.data = [];
         this.listPageSize = [1, 2, 3, 4, 5, 6, 7];
         this.search = "";
         this.framework = new _model_model_framework__WEBPACK_IMPORTED_MODULE_3__["Framework"]("", "", "");
+        this.paginate = new _model_model_pagonate__WEBPACK_IMPORTED_MODULE_4__["Paginate"]();
         this.pageIndex = 1;
         this.pageSize = 2;
     }
@@ -227,7 +266,6 @@ var AppComponent = /** @class */ (function () {
     };
     AppComponent.prototype.onGetEdit = function (framework) {
         this.isEdit = true;
-        console.log(framework);
         this.framework = framework;
         this.isFormOpen = true;
     };
@@ -279,16 +317,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _list_list_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list/list.component */ "./src/app/list/list.component.ts");
-/* harmony import */ var _addform_addform_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./addform/addform.component */ "./src/app/addform/addform.component.ts");
-/* harmony import */ var _filter_filter_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./filter/filter.component */ "./src/app/filter/filter.component.ts");
-/* harmony import */ var _paginate_paginate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./paginate/paginate.component */ "./src/app/paginate/paginate.component.ts");
-/* harmony import */ var _modeldelete_modeldelete_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modeldelete/modeldelete.component */ "./src/app/modeldelete/modeldelete.component.ts");
-
-
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _filter_filter_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter/filter.module */ "./src/app/filter/filter.module.ts");
+/* harmony import */ var _addform_addform_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./addform/addform.module */ "./src/app/addform/addform.module.ts");
+/* harmony import */ var _list_list_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./list/list.module */ "./src/app/list/list.module.ts");
+/* harmony import */ var _paginate_paginate_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./paginate/paginate.module */ "./src/app/paginate/paginate.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 
 
 
@@ -303,22 +337,17 @@ var AppModule = /** @class */ (function () {
     }
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-            declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
-                _list_list_component__WEBPACK_IMPORTED_MODULE_6__["ListComponent"],
-                _addform_addform_component__WEBPACK_IMPORTED_MODULE_7__["AddformComponent"],
-                _filter_filter_component__WEBPACK_IMPORTED_MODULE_8__["FilterComponent"],
-                _paginate_paginate_component__WEBPACK_IMPORTED_MODULE_9__["PaginateComponent"],
-                _modeldelete_modeldelete_component__WEBPACK_IMPORTED_MODULE_10__["ModeldeleteComponent"],
-            ],
+            declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-                _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+                _filter_filter_module__WEBPACK_IMPORTED_MODULE_4__["FilterModule"],
+                _list_list_module__WEBPACK_IMPORTED_MODULE_6__["ListModule"],
+                _addform_addform_module__WEBPACK_IMPORTED_MODULE_5__["AddformModule"],
+                _paginate_paginate_module__WEBPACK_IMPORTED_MODULE_7__["PaginateModule"],
+                _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -346,7 +375,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <div class=\"col-md-1 col-sm-1 col-2\">\n    <button (click)=\"onChangeFormState()\" class=\"btn btn-primary\" role=\"button\">Add</button>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-4\" style=\"display:flex\">\n    <label class=\"form-contro\">PageSize</label>\n    &nbsp;\n    <select class=\"form-control\" [ngModel]=\"pageSize\" (ngModelChange)=\"onChangePageSize($event)\">\n      <option *ngFor=\"let pageSize of listPageSize index as i\" value=\"{{pageSize}}\">{{pageSize}}</option>\n    </select>\n  </div>\n  <div class=\"col-md-7 col-sm-7 col-6\">\n      <input type=\"text\" [ngModel]=\"search\" (ngModelChange)=\"onSearch($event)\" class=\"form-control\">\n    </div>\n</div>\n"
+module.exports = "<div class=\"row col-md-12\" >\n  <div class=\"col-md-1 col-sm-1 col-2\">\n    <button (click)=\"onChangeFormState()\" class=\"btn btn-primary\" role=\"button\">Add</button>\n  </div>\n  <div class=\"col-md-4 col-sm-4 col-4\" style=\"display:flex\">\n    <label class=\"form-contro\">PageSize</label>\n    &nbsp;\n    <select class=\"form-control\" [ngModel]=\"pageSize\" (ngModelChange)=\"onChangePageSize($event)\">\n      <option *ngFor=\"let pageSize of listPageSize index as i\" value=\"{{pageSize}}\">{{pageSize}}</option>\n    </select>\n  </div>\n  <div class=\"col-md-7 col-sm-7 col-6\">\n      <input type=\"text\" [ngModel]=\"search\" (ngModelChange)=\"onSearch($event)\" placeholder=\"Search\" class=\"form-control\">\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -366,29 +395,35 @@ __webpack_require__.r(__webpack_exports__);
 
 var FilterComponent = /** @class */ (function () {
     function FilterComponent() {
+        this.search = "";
         this.pageSize = 5;
         this.listPageSize = [];
         this.formStateEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.pageSizeEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.searchEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
-    FilterComponent.prototype.ngOnInit = function () { };
     FilterComponent.prototype.onChangeFormState = function () {
         this.formStateEmit.emit();
     };
-    FilterComponent.prototype.onChangePageSize = function ($event) {
-        this.pageSizeEmit.emit($event);
+    FilterComponent.prototype.onChangePageSize = function (pageSize) {
+        this.pageSize = pageSize;
+        this.pageSizeEmit.emit(this.pageSize);
     };
-    FilterComponent.prototype.onSearch = function ($event) {
-        this.searchEmit.emit($event);
+    FilterComponent.prototype.onSearch = function (search) {
+        this.search = search;
+        this.searchEmit.emit(this.search);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("search"),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", String)
+    ], FilterComponent.prototype, "search", void 0);
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("pageSize"),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Number)
     ], FilterComponent.prototype, "pageSize", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("listPageSize"),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)
     ], FilterComponent.prototype, "listPageSize", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])("onChangeFormState"),
@@ -411,6 +446,43 @@ var FilterComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], FilterComponent);
     return FilterComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/filter/filter.module.ts":
+/*!*****************************************!*\
+  !*** ./src/app/filter/filter.module.ts ***!
+  \*****************************************/
+/*! exports provided: FilterModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FilterModule", function() { return FilterModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _filter_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./filter.component */ "./src/app/filter/filter.component.ts");
+
+
+
+
+
+var FilterModule = /** @class */ (function () {
+    function FilterModule() {
+    }
+    FilterModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_filter_component__WEBPACK_IMPORTED_MODULE_4__["FilterComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["CommonModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"]],
+            exports: [_filter_component__WEBPACK_IMPORTED_MODULE_4__["FilterComponent"]]
+        })
+    ], FilterModule);
+    return FilterModule;
 }());
 
 
@@ -455,6 +527,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ListComponent = /** @class */ (function () {
     function ListComponent() {
+        this.data = [];
         this.onGetEditEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.onDeleteEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.idDelete = "";
@@ -473,7 +546,7 @@ var ListComponent = /** @class */ (function () {
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("data"),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Array)
     ], ListComponent.prototype, "data", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])("onGetEdit"),
@@ -498,6 +571,45 @@ var ListComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/list/list.module.ts":
+/*!*************************************!*\
+  !*** ./src/app/list/list.module.ts ***!
+  \*************************************/
+/*! exports provided: ListModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListModule", function() { return ListModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _list_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./list.component */ "./src/app/list/list.component.ts");
+/* harmony import */ var _modeldelete_modeldelete_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../modeldelete/modeldelete.component */ "./src/app/modeldelete/modeldelete.component.ts");
+
+
+
+
+
+var ListModule = /** @class */ (function () {
+    function ListModule() {
+    }
+    ListModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_list_component__WEBPACK_IMPORTED_MODULE_3__["ListComponent"], _modeldelete_modeldelete_component__WEBPACK_IMPORTED_MODULE_4__["ModeldeleteComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            ],
+            exports: [_list_component__WEBPACK_IMPORTED_MODULE_3__["ListComponent"]]
+        })
+    ], ListModule);
+    return ListModule;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/model/model.framework.ts":
 /*!******************************************!*\
   !*** ./src/app/model/model.framework.ts ***!
@@ -511,12 +623,45 @@ __webpack_require__.r(__webpack_exports__);
 var uuidv4 = __webpack_require__(/*! uuid/v4 */ "./node_modules/uuid/v4.js");
 var Framework = /** @class */ (function () {
     function Framework(name, image, puslisher) {
+        if (name === void 0) { name = ""; }
+        if (image === void 0) { image = ""; }
+        if (puslisher === void 0) { puslisher = ""; }
         this.id = uuidv4();
         this.name = name;
         this.image = image;
         this.puslisher = puslisher;
     }
     return Framework;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/model/model.pagonate.ts":
+/*!*****************************************!*\
+  !*** ./src/app/model/model.pagonate.ts ***!
+  \*****************************************/
+/*! exports provided: Paginate */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Paginate", function() { return Paginate; });
+var Paginate = /** @class */ (function () {
+    function Paginate(currentPage, perPage, total, totalPages, data) {
+        if (currentPage === void 0) { currentPage = 0; }
+        if (perPage === void 0) { perPage = 0; }
+        if (total === void 0) { total = 0; }
+        if (totalPages === void 0) { totalPages = 0; }
+        if (data === void 0) { data = []; }
+        this.currentPage = currentPage;
+        this.perPage = perPage;
+        this.total = total;
+        this.totalPages = totalPages;
+        this.data = data;
+    }
+    return Paginate;
 }());
 
 
@@ -563,8 +708,6 @@ var ModeldeleteComponent = /** @class */ (function () {
     function ModeldeleteComponent() {
         this.onConfirmDeleteEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
     }
-    ModeldeleteComponent.prototype.ngOnInit = function () {
-    };
     ModeldeleteComponent.prototype.onDismisDelete = function () {
         this.onConfirmDeleteEmit.emit(false);
     };
@@ -577,7 +720,7 @@ var ModeldeleteComponent = /** @class */ (function () {
     ], ModeldeleteComponent.prototype, "onConfirmDeleteEmit", void 0);
     ModeldeleteComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-modeldelete',
+            selector: "app-modeldelete",
             template: __webpack_require__(/*! ./modeldelete.component.html */ "./src/app/modeldelete/modeldelete.component.html"),
             styles: [__webpack_require__(/*! ./modeldelete.component.css */ "./src/app/modeldelete/modeldelete.component.css")]
         }),
@@ -608,7 +751,7 @@ module.exports = "li {\r\n  cursor: pointer;\r\n}\r\nli.disabled{\r\n  cursor: n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<nav aria-label=\"Page navigation example\" *ngIf=\"paginate.totalPages>0\">\n  <ul class=\"pagination\">\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage<=1\"><a class=\"page-link\" (click)=\"onChangePage($event,1)\">First</a>\n    </li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage<=1\"><a class=\"page-link\" (click)=\"onChangePage($event,paginate.currentPage-1)\" >Previous</a></li>\n    <li class=\"page-item\" *ngFor=\"let item of paginateTempalte\" [class.active]=\"item==paginate.currentPage\"><a\n        class=\"page-link\" (click)=\"onChangePage($event,item)\">{{item}}</a></li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage>=paginate.totalPages\"><a class=\"page-link\" (click)=\"onChangePage($event,paginate.currentPage+1)\">Next</a>\n    </li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage>=paginate.totalPages\"><a class=\"page-link\" (click)=\"onChangePage($event,paginate.totalPages)\">Last</a></li>\n  </ul>\n</nav>\n"
+module.exports = "<nav aria-label=\"Page navigation example\" *ngIf=\"paginate.totalPages>0\">\n  <ul class=\"pagination\">\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage<=1\"><a class=\"page-link\" (click)=\"onChangePage(1)\">First</a>\n    </li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage<=1\"><a class=\"page-link\" (click)=\"onChangePage(paginate.currentPage-1)\" >Previous</a></li>\n    <li class=\"page-item\" *ngFor=\"let item of paginateTempalte\" [class.active]=\"item==paginate.currentPage\"><a\n        class=\"page-link\" (click)=\"onChangePage(item)\">{{item}}</a></li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage>=paginate.totalPages\"><a class=\"page-link\" (click)=\"onChangePage(paginate.currentPage+1)\">Next</a>\n    </li>\n    <li class=\"page-item\" [class.disabled]=\"paginate.currentPage>=paginate.totalPages\"><a class=\"page-link\" (click)=\"onChangePage(paginate.totalPages)\">Last</a></li>\n  </ul>\n</nav>\n"
 
 /***/ }),
 
@@ -624,10 +767,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginateComponent", function() { return PaginateComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _model_model_pagonate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../model/model.pagonate */ "./src/app/model/model.pagonate.ts");
+
 
 
 var PaginateComponent = /** @class */ (function () {
     function PaginateComponent() {
+        this.paginate = new _model_model_pagonate__WEBPACK_IMPORTED_MODULE_2__["Paginate"]();
         this.onChangePageIndexEmit = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         this.paginateTempalte = [];
     }
@@ -655,7 +801,7 @@ var PaginateComponent = /** @class */ (function () {
             }
         }
         else if (currentPage == totalPages) {
-            for (var i = (totalPages - totalRanger) + 1; i <= totalPages; ++i) {
+            for (var i = totalPages - totalRanger + 1; i <= totalPages; ++i) {
                 if (i > 0) {
                     paginateTempalte.push(i);
                 }
@@ -678,13 +824,12 @@ var PaginateComponent = /** @class */ (function () {
         }
         return paginateTempalte;
     };
-    PaginateComponent.prototype.onChangePage = function ($event, page) {
-        $event.stopPropagation();
+    PaginateComponent.prototype.onChangePage = function (page) {
         this.onChangePageIndexEmit.emit(page);
     };
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Input"])("paginate"),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", Object)
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _model_model_pagonate__WEBPACK_IMPORTED_MODULE_2__["Paginate"])
     ], PaginateComponent.prototype, "paginate", void 0);
     tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Output"])("onChangePageIndex"),
@@ -699,6 +844,41 @@ var PaginateComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], PaginateComponent);
     return PaginateComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/paginate/paginate.module.ts":
+/*!*********************************************!*\
+  !*** ./src/app/paginate/paginate.module.ts ***!
+  \*********************************************/
+/*! exports provided: PaginateModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginateModule", function() { return PaginateModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+/* harmony import */ var _paginate_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./paginate.component */ "./src/app/paginate/paginate.component.ts");
+
+
+
+
+var PaginateModule = /** @class */ (function () {
+    function PaginateModule() {
+    }
+    PaginateModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+            declarations: [_paginate_component__WEBPACK_IMPORTED_MODULE_3__["PaginateComponent"]],
+            imports: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"]],
+            exports: [_paginate_component__WEBPACK_IMPORTED_MODULE_3__["PaginateComponent"]]
+        })
+    ], PaginateModule);
+    return PaginateModule;
 }());
 
 
@@ -721,6 +901,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var paginate_array__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(paginate_array__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _model_model_framework__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../model/model.framework */ "./src/app/model/model.framework.ts");
+
 
 
 
@@ -765,7 +947,7 @@ var FrameworkService = /** @class */ (function () {
             return this.data[index];
         }
         else {
-            return {};
+            return new _model_model_framework__WEBPACK_IMPORTED_MODULE_4__["Framework"]();
         }
     };
     FrameworkService.prototype.edit = function (framework) {
